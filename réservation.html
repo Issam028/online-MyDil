@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="icon" type="image/png" href="Images/mydil-tube-cropped.jpg">
+
 </head>
 
 <body>
@@ -42,7 +45,7 @@
         <div class="hero-section">
             <div class="hero-content">
                 <h1 class="my-dil"><span class="my-part">MY</span> <span class="dil-part">DIL</span></h1>
-                <p class="reservation-text">Le laboratoire de demain <br/> à votre disposition aujourd'hui</p>
+                <p class="reservation-text">Le laboratoire de demain <br /> à votre disposition aujourd'hui</p>
             </div>
         </div>
 
@@ -67,7 +70,7 @@
         </div>
     </div>
 
-    <div class="cart" id="cartIcon"> 
+    <div class="cart" id="cartIcon">
         <div class="cart-content">
             <i class="fas fa-shopping-cart fa-2x"></i>
             <p id="cart-modal-count">0 articles</p>
@@ -80,14 +83,36 @@
             <ul id="cart-items-list">
                 <li>Aucun article dans le panier.</li>
             </ul>
+    
+            <div id="dateSection" style="display:none;">
+                <label for="dateDebut">Date de début:</label>
+                <input type="text" id="dateDebut" class="datepicker">
+    
+                <label for="dateFin">Date de fin:</label>
+                <input type="text" id="dateFin" class="datepicker">
+            </div>
+    
+            <div id="noteSection" style="display:none;">
+                <label for="note">Raison:</label>
+                <textarea id="note" rows="4" placeholder="Dites-nous pourquoi vous avez besoin de cet article"></textarea>
+            </div>
+    
+            <button class="btn btn-primary" id="confirmerBtn" style="display:none;">Confirmer</button>
+            <button class="btn btn-secondary" id="validerBtn" style="display:none;">Valider</button>
             <button class="btn btn-secondary" id="closeCart">Fermer</button>
         </div>
     </div>
+    
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/script.js"></script> <!-- Added script.js here -->
+
+
 
 </body>
+
 </html>

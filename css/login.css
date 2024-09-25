@@ -1,0 +1,125 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+.login-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../Images/img_fond1.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+button {
+    display: flex; /* Allows centering of text inside the button */
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    padding: 12px;
+    font-size: 1.2rem; /* Slightly increase font size for prominence */
+    font-weight: bold; /* Make the text bold */
+    border-radius: 8px;
+    background-color: #024385;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    text-align: center; /* Ensures the text is aligned properly */
+}
+
+button:hover {
+    background-color: #003bb5;
+}
+
+
+.btn-outline-primary {
+    border-color: #024385;
+    color: #024385;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn-outline-primary:hover {
+    background-color: #024385;
+    color: #fff;
+}
+
+.rainbow-text {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    background: linear-gradient(to right, #4390DE, #4390DE, #FCAC49, #FCAC49);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .form-section {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-control {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    button, .btn-outline-primary {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

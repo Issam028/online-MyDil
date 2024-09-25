@@ -19,12 +19,11 @@
 .navbar-icons {
     display: flex;
     align-items: center;
-    margin-left: 15px;
+    margin-left: auto;
 }
 
 .navbar-icon img {
     height: 24px;
-    margin-left: 15px;
 }
 
 .background-image {
@@ -385,4 +384,57 @@
         width: 100%;
         margin: 20px 0;
     }
+}
+
+/* Date section and note section will appear with a transition */
+#dateSection, #noteSection {
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: none;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #FF7E03;
+    box-shadow: 0 0 10px rgba(255, 126, 3, 0.2);
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #024385;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #003bb5;
+}
+
+.btn-secondary {
+    background-color: #FF7E03;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #FFA533;
 }

@@ -3,6 +3,9 @@ const quantityDisplay = document.getElementById('quantity');
 const increaseBtn = document.getElementById('increase');
 const decreaseBtn = document.getElementById('decrease');
 const fixedCartCount = document.getElementById('cart-modal-count');
+let cartItems = [];
+const cartItemsList = document.getElementById('cart-items-list');
+const cartItemCount = document.getElementById('cart-item-count');
 
 let productStock = {
     'Casque de réalité augmentée': {
@@ -12,15 +15,17 @@ let productStock = {
     }
 };
 
+// Update quantity display
 quantityDisplay.textContent = quantity;
 
+// Increase quantity
 increaseBtn.addEventListener('click', function() {
     if (quantity < productStock['Casque de réalité augmentée'].stock) {
         quantity++;
         quantityDisplay.textContent = quantity;
     } else {
         Toastify({
-            text: "Stock insuffisant! Quantité restante: " + productStock['Casque de réalité augmentée'].stock,
+            text: "Stock insuffisant!",
             duration: 3000,
             gravity: "top",
             position: "center",
@@ -30,6 +35,7 @@ increaseBtn.addEventListener('click', function() {
     }
 });
 
+// Decrease quantity
 decreaseBtn.addEventListener('click', function() {
     if (quantity > 1) {
         quantity--;
@@ -37,18 +43,10 @@ decreaseBtn.addEventListener('click', function() {
     }
 });
 
-$(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
-let cartItems = [];
-let uniqueAddCount = 0;
-const cartItemsList = document.getElementById('cart-items-list');
-const cartItemCount = document.getElementById('cart-item-count');
-
+// Update the cart display
 function updateCart() {
     let cartHtml = '';
-    
+
     cartItems.forEach((item, index) => {
         cartHtml += `
             <li class="cart-item">
@@ -61,11 +59,19 @@ function updateCart() {
             </li>
         `;
     });
-    cartItemsList.innerHTML = cartHtml;
 
-    cartItemCount.innerText = uniqueAddCount;
-    fixedCartCount.textContent = uniqueAddCount + ' articles';
+    cartItemsList.innerHTML = cartHtml || "<li>Aucun article dans le panier.</li>";
+    const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0); // Calculate total quantity of items
+    cartItemCount.innerText = totalItems; // Update the navbar cart count
+    fixedCartCount.textContent = totalItems + ' articles';
+    // Handle showing or hiding the "Valider" button
+    if (cartItems.length > 0) {
+        $("#validerBtn").fadeIn();
+    } else {
+        $("#validerBtn").fadeOut();
+    }
 
+    // Add delete functionality
     document.querySelectorAll('.delete-item').forEach(button => {
         button.addEventListener('click', function() {
             const itemIndex = this.getAttribute('data-index');
@@ -74,12 +80,11 @@ function updateCart() {
     });
 }
 
+// Remove item from cart
 function removeFromCart(index) {
     let removedItem = cartItems[index];
     productStock[removedItem.name].stock += removedItem.quantity;
-
     cartItems.splice(index, 1);
-    uniqueAddCount--;
     updateCart();
 
     Toastify({
@@ -92,6 +97,7 @@ function removeFromCart(index) {
     }).showToast();
 }
 
+// Add item to cart
 function addToCart(product) {
     const currentStock = productStock[product.name].stock;
 
@@ -105,11 +111,10 @@ function addToCart(product) {
                 quantity: quantity
             });
         } else {
-            cartItems[existingProductIndex].quantity += quantity;
+            cartItems[existingProductIndex].quantity += quantity; // Add to existing quantity
         }
 
         productStock[product.name].stock -= quantity;
-        uniqueAddCount++;
         updateCart();
 
         Toastify({
@@ -122,7 +127,7 @@ function addToCart(product) {
         }).showToast();
     } else {
         Toastify({
-            text: "Stock insuffisant! Quantité restante: " + currentStock,
+            text: "Stock insuffisant!",
             duration: 3000,
             gravity: "top",
             position: "center",
@@ -132,14 +137,14 @@ function addToCart(product) {
     }
 }
 
+// Attach event listener to the add to cart button
 document.querySelector('.btn-primary').addEventListener('click', function() {
     const product = productStock['Casque de réalité augmentée'];
     addToCart(product);
 });
 
-// Apply same functionality to both carts (navbar and fixed)
-const cartElements = document.querySelectorAll('.cart, .cart-icon'); // Select both the fixed and navbar carts
-cartElements.forEach(cartElement => {
+// Apply functionality to both carts (navbar and fixed)
+document.querySelectorAll('.cart, .cart-icon').forEach(cartElement => {
     cartElement.addEventListener('click', function() {
         document.getElementById('cartModal').classList.add('show');
     });
@@ -147,4 +152,64 @@ cartElements.forEach(cartElement => {
 
 document.getElementById('closeCart').addEventListener('click', function() {
     document.getElementById('cartModal').classList.remove('show');
+});
+
+// Handle the datepicker and note sections
+$(document).ready(function() {
+    $(".datepicker").datepicker({
+        dateFormat: "dd/mm/yy",
+        minDate: 0
+    });
+
+    $("#dateDebut").datepicker("setDate", new Date()); // Default to today's date
+});
+
+// Valider and Confirmer button logic
+$("#validerBtn").on("click", function () {
+    $("#validerBtn").fadeOut(300);
+    $("#dateSection, #noteSection, #confirmerBtn").fadeIn(400).css("display", "block");
+
+    Toastify({
+        text: "Veuillez sélectionner une date de début, une date de fin, et la raison.",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "linear-gradient(to right, #FF7E03, #FFA533)"
+    }).showToast();
+});
+
+$("#confirmerBtn").on("click", function () {
+    let dateDebut = $("#dateDebut").val();
+    let dateFin = $("#dateFin").val();
+    let note = $("#note").val();
+
+    if (!dateFin) {
+        Toastify({
+            text: "Veuillez sélectionner une date de fin.",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "linear-gradient(to right, #FF5F6D, #FFC371)"
+        }).showToast();
+    } else if (!note) {
+        Toastify({
+            text: "Veuillez entrer une raison.",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "linear-gradient(to right, #FF5F6D, #FFC371)"
+        }).showToast();
+    } else {
+        Toastify({
+            text: "Votre demande a été envoyée.",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+        }).showToast();
+
+        // Clear the cart
+        cartItems = [];
+        updateCart();
+    }
 });

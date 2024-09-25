@@ -5,35 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" type="image/png" href="Images/mydil-tube-cropped.jpg">
 
 </head>
 
 <body>
-    <div class="container-fluid login-container">
-        <div class="col-md-6 login-image d-none d-md-block">
-
-        </div>
-
-
-        <div class="col-md-6 d-flex align-items-center justify-content-center login-form">
+    <div class="login-container">
+        <div class="login-image"></div>
+        <div class="login-form">
             <div class="form-section">
                 <h2 class="text-center mb-4">Connexion</h2>
                 <h3 class="rainbow-text text-center mt-3">Bonjour et bienvenue.</h3>
                 <form action="/connexion" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="" required>
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Mot de passe</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="********"
-                            required>
+                        <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class=" form-control btn btn-primary">Se connecter</button>
+                        <button type="submit" class="form-control btn btn-primary">Se connecter</button>
                     </div>
                 </form>
                 <div class="text-center mt-4">
@@ -42,9 +37,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 </body>
 
 </html>
