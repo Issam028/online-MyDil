@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Base de Données</title>
+    <link rel="stylesheet" href="assets/style/page_gestionBdd.css">
+</head>
+<body>
+    <div class="bandeau">
+    <img id="logo" src="assets/img/logo1.png" alt="Logo">
+        <div class="bandeau-flex">
+            <h1>Page de Gestion</h1>
+        </div>
+        <a href="?logout=true"><button class="bouton-login">LogOut</button></a>
+    </div>
+
+    <div class="navigation">
+        <button id="materielBtn" class="btn-nav">Matériel</button>
+        <button id="classeBtn" class="btn-nav">Classe</button>
+        <div class="dropdown">
+            <button id="utilisateursBtn" class="btn-nav">Utilisateurs</button>
+            <div class="dropdown-content">
+                <button id="eleveBtn" class="btn-nav">Élèves</button>
+                <button id="professeurBtn" class="btn-nav">Professeurs</button>
+            </div>
+        </div>
+        <button id="activiteBtn" class="btn-nav">Activités</button>
+    </div>
+
+    <div class="contenu">
+        <!-- Section Matériel -->
+
+        <div id="materielSection" class="section">
+            <div class="ajout">
+                <h2>Ajouter du Matériel</h2>
+                <form id="ajoutMaterielForm" enctype="multipart/form-data">
+        
+                    <label for="nom_materiel">Nom du matériel :</label>
+                    <input type="text" id="nom_materiel" name="nom_materiel" required>
+        
+                    <label for="quantite">Quantité :</label>
+                    <input type="number" id="quantite" name="quantite" required>
+        
+                    <label for="reserver">Réservé :</label>
+                    <input type="number" id="reserver" name="reserver" required>
+        
+                    <label for="indisponible">Indisponible :</label>
+                    <input type="number" id="indisponible" name="indisponible" required>
+        
+                    <!-- Champ pour ajouter des images -->
+                    <label for="images_materiel">Ajouter des images :</label>
+                    <input type="file" id="images_materiel" name="images_materiel[]" accept="image/*" multiple>
+        
+                    <button type="submit">Ajouter</button>
+                </form>
+            </div>
+            <table id="materielTable"></table>
+        </div>
+        
+        <!-- Section Classe -->
+
+        <div id="classeSection" class="section" style="display:none;">
+            <div class="ajout">
+                <h2>Ajouter une Classe</h2>
+                <form id="ajoutClasseForm">
+                    <label for="nom_classe">Nom de la classe :</label>
+                    <input type="text" id="nom_classe" name="nom_classe" required>
+                    <button type="submit">Ajouter</button>
+                </form>
+            </div>
+            <table id="classeTable">
+                <thead>
+                    <tr>
+                        <th>Nom de la classe</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <!-- Section Élèves -->
+
+        <div id="eleveSection" class="section" style="display:none;">
+            <div class="ajout">
+                <h2>Ajouter un Élève</h2>
+                <form id="ajoutEleveForm">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required><br>
+
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required><br>
+
+                    <label for="identifiant">Identifiant :</label>
+                    <input type="text" id="identifiant" name="identifiant" required><br>
+
+                    <label for="classe">Classe :</label>
+                    <select id="classe" name="classe" style="margin-bottom: 15px;">
+                        <!-- Options générées dynamiquement à partir des classes disponibles -->
+                    </select><br>
+
+                    <div id="motDePasseContainer">
+                        <label for="mot_de_passe">Mot de passe :</label>
+                        <input type="text" id="mot_de_passe_eleve" name="mot_de_passe" readonly>
+                        <button type="button" id="genererMotDePasseEleve">Générer</button>
+                    </div>
+
+                    <button type="submit">Ajouter</button>
+                </form>
+            </div>
+            <table id="eleveTable"></table>
+        </div>
+
+        <!-- Section Professeurs -->
+        <div id="professeurSection" class="section" style="display:none;">
+            <div class="ajout">
+                <h2>Ajouter un Professeur</h2>
+                <form id="ajoutProfesseurForm">
+                    <label for="nom_professeur">Nom :</label>
+                    <input type="text" id="nom_professeur" name="nom_professeur" required><br>
+
+                    <label for="prenom_professeur">Prénom :</label>
+                    <input type="text" id="prenom_professeur" name="prenom_professeur" required><br>
+
+                    <label for="identifiant_Professeur">Identifiant :</label>
+                    <input type="text" id="identifiant_Professeur" name="identifiant_Professeur" required><br>
+
+                    <div id="motDePasseContainer">
+                        <label for="mot_de_passe">Mot de passe :</label>
+                        <input type="text" id="mot_de_passe_professeur" name="mot_de_passe_professeur" readonly>
+                        <button type="button" id="genererMotDePasseProfesseur">Générer</button><br>
+                    </div>
+
+                    <button type="submit">Ajouter</button>
+                </form>
+            </div>
+            <table id="professeurTable"></table>
+        </div>
+
+        <!-- Section activite -->
+
+        <div id="activiteSection" class="section" style="display:none;">
+            <div class="ajout">
+                <h2>Ajouter une Activité</h2>
+                <form id="ajoutActiviteForm">
+                    <label for="titre_activite">Titre de l'activité :</label>
+                    <input type="text" id="titre_activite" name="titre_activite" required><br>
+
+                    <label for="description_activite">Description de l'activité :</label>
+                    <textarea id="description_activite" name="description_activite" required></textarea><br>
+
+                    <label for="professeur">Professeur :</label>
+                    <select id="professeur" name="professeur" required>
+                        <!-- Options générées dynamiquement à partir des professeurs disponibles -->
+                    </select><br>
+
+                    <label for="classe">Classe :</label>
+                    <select id="classe" name="classe" required>
+                        <!-- Options générées dynamiquement à partir des classes disponibles -->
+                    </select><br>
+
+                    <label for="documents">Documents (PDF) :</label>
+                    <input type="file" id="documents" name="documents[]" multiple accept=".pdf"><br>
+
+                    <label for="videos">Vidéos :</label>
+                    <input type="file" id="videos" name="videos[]" multiple accept="video/*"><br>
+
+                    <button type="submit">Ajouter</button>
+                </form>
+            </div>
+
+            <!-- Tableau des Activités -->
+            <table id="activiteTable">
+                <thead>
+                    <tr>
+                        <th>Titre de l'activité</th>
+                        <th>Description</th>
+                        <th>Professeur</th>
+                        <th>Classe</th>
+                        <th>Documents</th>
+                        <th>Vidéos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div id="activiteContainer"></div>
+                    <!-- Contenu généré dynamiquement -->
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+
+
+    <script src="assets/script/page_gestionBdd.js"></script>
+</body>
+</html>

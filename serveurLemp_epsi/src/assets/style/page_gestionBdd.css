@@ -1,0 +1,571 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/back3.jpeg');
+    background-color: #6E99A2;
+    background-size: auto; /* Maintient la taille originale de l'image */
+    background-repeat: repeat; /* Répète l'image de fond */
+    background-position: center;
+    background-blend-mode: overlay;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Title and Subtitle */
+.title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+/* Login Form */
+.login-form {
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.login-form.show {
+    display: block;
+    opacity: 1;
+}
+
+.login-form .container {
+    background-color: #1d80b0;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fefee2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.login-form input[type="text"]::placeholder,
+.login-form input[type="password"]::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.login-form input[type="submit"],
+.login-form .back-button {
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #6C899E;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
+}
+
+.login-form input[type="submit"]:hover,
+.login-form .back-button:hover {
+    background-color: #557284;
+}
+
+.login-form .error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.titleBtn {
+    background-color: #6C899E;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.titleBtn:hover {
+    background-color: #557284;
+}
+
+/* Header Styles */
+.bandeau {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.bandeau img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+.bandeau h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.bouton-login {
+    background-color: #6C899E;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 20px;
+}
+
+.bouton-login:hover {
+    background-color: #557284;
+}
+
+/* Flex container for centering title */
+.bandeau-flex {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.bandeau-flex h1 {
+    flex-grow: 1;
+    margin: 0;
+    text-align: center;
+}
+
+
+.bouton-login:hover {
+    background-color: #557284;
+}
+
+/* Ajoutez une nouvelle classe pour contenir le logo et le titre */
+.bandeau-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.bandeau-content img {
+    margin-right: 20px;
+}
+
+.bandeau-content h1 {
+    flex-grow: 1;
+    text-align: left; /* Change text alignment if needed */
+}
+
+
+.bouton-login:hover {
+    background-color: #557284;
+}
+
+/* Main Content Styles */
+.contenu {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 40px;
+    color: #ffffff;
+    z-index: 2;
+}
+
+/* Footer Styles */
+.bandeau-bas {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.bandeau-bas a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Styles pour la barre de navigation */
+.navigation {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* Styles pour les boutons de navigation */
+.btn-nav {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.btn-nav:hover {
+    background-color: #557284;
+}
+
+/* Style pour le menu déroulant */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content .btn-nav {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/* Form Styles */
+.ajout {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.ajout h2 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.ajout form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ajout label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.ajout input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.ajout button {
+    padding: 10px;
+    background-color: #1d80b0; /* New color for add button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ajout button:hover {
+    background-color: #05557b; /* New color for add button on hover */
+}
+
+/* Container for the password input and button */
+#motDePasseContainer {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#motDePasse {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: calc(100% - 120px);
+    float: left;
+}
+
+#genererMotDePasseEleve {
+    padding: 10px;
+    background-color: #1d80b0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+#genererMotDePasseEleve:hover {
+    background-color: #05557b; /* New color for generate button on hover */
+}
+
+/* Additional styles for the form and button */
+.ajout {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.ajout h2 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.ajout form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ajout label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.ajout input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.ajout button {
+    padding: 10px;
+    background-color: #1d80b0; /* New color for add button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ajout button:hover {
+    background-color: #05557b; /* New color for add button on hover */
+}
+
+/* Styles pour les tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+table button {
+    padding: 5px 10px;
+    background-color: #ff9999; /* Red pastel for delete button */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+table button:hover {
+    background-color: #ff4c4c;
+}
+
+/* Style pour les flèches */
+#salleTable th {
+    position: relative;
+    cursor: pointer;
+}
+
+#salleTable th span {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+}
+
+.dropdown-content button:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .btn-nav {
+    background-color: #557284;
+}
+
+/* Select */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:hover {
+    border-color: #999;
+}
+.activity {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+    .activity h3 {
+        margin-top: 0;
+    }
+
+.documents a, .videos a {
+    display: block;
+    margin-top: 5px;
+}
+
+.delete-button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+    .delete-button:hover {
+        background-color: #ff1a1a;
+    }

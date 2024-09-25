@@ -1,0 +1,197 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/back3.jpeg');
+    background-color: #6E99A2;
+    background-size: auto; /* Maintient la taille originale de l'image */
+    background-repeat: repeat; /* Répète l'image de fond */
+    background-position: center;
+    background-blend-mode: overlay;
+    color: #ffffff;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Header Styles */
+.bandeau {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.bandeau img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+.bandeau h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 30px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Login Button */
+.bouton-login {
+    background-color: #1d80b0; /* New color for button */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 20px;
+}
+
+.bouton-login:hover {
+    background-color: #05557b; /* New color for button on hover */
+}
+
+/* Footer Styles */
+.bandeau-bas {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.bandeau-bas a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Table Container */
+.table-container {
+    width: 100%;
+    height: calc(100vh - 160px); /* Hauteur de l'écran moins la hauteur des bandeaux */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    z-index: 2;
+}
+
+/* Table Styles */
+.table {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 30px; /* Hauteur des lignes */
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    position: relative;
+}
+
+.header {
+    display: contents;
+}
+
+.row {
+    display: contents;
+}
+
+.cell {
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.reservation {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    position: absolute;
+    padding: 5px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+/* Navigation Styles */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    z-index: 2;
+}
+
+.navigation #prevWeekBtn,
+.navigation #nextWeekBtn {
+    background-color: #1d80b0; /* New color for buttons */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation #prevWeekBtn:hover,
+.navigation #nextWeekBtn:hover {
+    background-color: #05557b; /* New color for buttons on hover */
+}
+
+.navigation #semaine-info {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Button Styles */
+.ajout button {
+    padding: 10px;
+    background-color: #1d80b0; /* New color for add button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #ffffff; /* Couleur du texte */
+}
+
+.ajout button:hover {
+    background-color: #05557b; /* New color for add button on hover */
+}
+
+.bouton-supprimer {
+    padding: 10px;
+    background-color: #e57373; /* New color for delete button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer
