@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physique Chimie</title>
+    <link rel="stylesheet" href="assets/style/index.css">
+</head>
+<body>
+    <img id="logo" src="assets/img/logo1.png" alt="Logo">
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <div class="bienvenu">
+            <h1 class="title">Bienvenue à l'étage de physique chimie</h1>
+            <p class="subtitle">Connectez-vous pour accéder à votre compte</p>
+            <button class="titleBtn">Connexion</button>
+        </div>
+
+        <!-- Zone de connexion -->
+        <div class="login-form" id="login-form">
+            <h2>CONNEXION</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Se connecter">
+                </div>
+                <div class="error-message" id="error-message"></div>
+            </form>
+        </div>
+    </div>
+    <script src="assets/script/index.js"></script>
+</body>
+</html>

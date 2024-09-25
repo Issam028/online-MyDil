@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/back3.jpeg');
+    background-color: #6E99A2;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    filter: hue-rotate(180deg); /* Filtre turquoise */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+}
+#logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+    z-index: 9999;
+    filter: hue-rotate(180deg); /* Filtre turquoise */
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec 50% d'opacité */
+    z-index: 1; /* Assure que l'overlay est au-dessus du fond */
+}
+.container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Assure que le contenu est au-dessus de l'overlay */
+    width: 80%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Couleur de fond semi-transparente */
+}
+.title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+.login-form {
+    display: none; /* Cache la zone de connexion par défaut */
+    transition: opacity 0.3s ease-in-out; /* Ajoute une transition fluide */
+}
+
+.login-form.show {
+    display: block; /* Affiche la zone de connexion lorsqu'elle a la classe "show" */
+    opacity: 1; /* Rend la zone de connexion visible */
+}
+
+.login-form .container {
+    background-color: #ffb347; /* Couleur de fond */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fefee2; /* Couleur du texte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.login-form input[type="text"]::placeholder,
+.login-form input[type="password"]::placeholder {
+    color: #999; /* Couleur du placeholder */
+    font-style: italic;
+}
+
+/* Style du bouton de connexion */
+.login-form input[type="submit"],
+.login-form .back-button {
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #6C899E; /* Couleur du bouton */
+    color: #ffffff; /* Couleur du texte du bouton */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
+}
+
+.login-form input[type="submit"]:hover,
+.login-form .back-button:hover {
+    background-color: #557284; /* Couleur du bouton au survol */
+}
+
+.login-form .error-message {
+    color: #ff0000; /* Couleur du message d'erreur */
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+/* Style du bouton de connexion au-dessus du formulaire */
+.titleBtn {
+    background-color: #6C899E; /* Couleur du bouton */
+    color: #ffffff; /* Couleur du texte du bouton */
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+.titleBtn:hover {
+    background-color: #557284; /* Couleur du bouton au survol */
+}
+
+.edit-btn {
+    padding: 8px 12px;
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Supprime les bordures */
+    border-radius: 4px; /* Arrondi les coins */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: background-color 0.3s ease; /* Animation de transition */
+}
+
+.edit-btn:hover {
+    background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}
+
+.edit-btn:focus {
+    outline: none; /* Supprime la bordure de mise au point */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Ajoute une bordure de mise au point */
+}
+
+.edit-btn:active {
+    background-color: #004080; /* Couleur de fond du bouton lorsqu'il est enfoncé */
+}
