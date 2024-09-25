@@ -208,8 +208,23 @@ $("#confirmerBtn").on("click", function () {
             backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
         }).showToast();
 
-        // Clear the cart
-        cartItems = [];
-        updateCart();
+        // Clear the cart and reset the form
+        $("#cart-items-list").html("<li>Aucun article dans le panier.</li>");
+        $("#dateDebut").val(''); // Reset the date inputs
+        $("#dateFin").val('');
+        $("#note").val(''); // Reset the note field
+
+        // Hide the date and note sections
+        $("#dateSection, #noteSection, #confirmerBtn").fadeOut(300);
+
+        // Optionally hide the cart modal after confirmation
+        setTimeout(function () {
+            $("#cartModal").removeClass('show');
+        }, 500);
+
+        console.log("Date début: " + dateDebut);
+        console.log("Date fin: " + dateFin);
+        console.log("Raison: " + note);
     }
 });
+
