@@ -20,11 +20,11 @@ increaseBtn.addEventListener('click', function() {
         quantityDisplay.textContent = quantity;
     } else {
         Toastify({
-            text: "Stock insuffisant! Quantité restante: " + currentStock,
+            text: "Stock insuffisant! Quantité restante: " + productStock['Casque de réalité augmentée'].stock,
             duration: 3000,
             gravity: "top",
             position: "center",
-            backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)", // Custom gradient color for error
+            backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
             stopOnFocus: true,
         }).showToast();
     }
@@ -132,14 +132,17 @@ function addToCart(product) {
     }
 }
 
-
 document.querySelector('.btn-primary').addEventListener('click', function() {
     const product = productStock['Casque de réalité augmentée'];
     addToCart(product);
 });
 
-document.getElementById('cart').addEventListener('click', function() {
-    document.getElementById('cartModal').classList.add('show');
+// Apply same functionality to both carts (navbar and fixed)
+const cartElements = document.querySelectorAll('.cart, .cart-icon'); // Select both the fixed and navbar carts
+cartElements.forEach(cartElement => {
+    cartElement.addEventListener('click', function() {
+        document.getElementById('cartModal').classList.add('show');
+    });
 });
 
 document.getElementById('closeCart').addEventListener('click', function() {

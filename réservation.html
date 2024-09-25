@@ -12,14 +12,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
-
-
 </head>
 
 <body>
 
-    <div class="background-image"></div> 
-
+    <div class="background-image"></div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -30,17 +27,16 @@
                 <a href="#" class="navbar-icon">
                     <img src="images/user-icon.svg" alt="User" height="24">
                 </a>
-                <a href="#" class="navbar-icon cart-icon">
+                <a href="#" class="navbar-icon cart-icon" id="cartNavIcon">
                     <i class="fas fa-shopping-cart fa-2x"></i>
                     <span class="badge badge-pill badge-danger" id="cart-item-count">0</span>
-                </a>                
+                </a>
                 <a href="#" class="navbar-icon">
                     <img src="images/logout-icon.png" alt="Logout" height="24">
                 </a>
             </div>
         </div>
     </nav>
-
 
     <div class="main-container">
         <div class="hero-section">
@@ -49,7 +45,6 @@
                 <p class="reservation-text">Le laboratoire de demain <br/> à votre disposition aujourd'hui</p>
             </div>
         </div>
-
 
         <div class="product-grid">
             <div class="product-card">
@@ -72,14 +67,12 @@
         </div>
     </div>
 
-
-    <div class="cart" id="cart"> 
+    <div class="cart" id="cartIcon"> 
         <div class="cart-content">
             <i class="fas fa-shopping-cart fa-2x"></i>
             <p id="cart-modal-count">0 articles</p>
         </div>
     </div>
-    
 
     <div class="cart-modal" id="cartModal">
         <div class="cart-modal-content">
@@ -91,12 +84,10 @@
         </div>
     </div>
 
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="js/script.js"></script>
 
 </body>
-
 </html>
