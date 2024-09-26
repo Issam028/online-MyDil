@@ -269,8 +269,8 @@ const products = [
     {name: 'Imprimante 3D', image: 'images/printer3d.png', stock: 5, description: 'Imprimez vos créations avec cette imprimante 3D.'},
     {name: 'Microscope', image: 'images/microscope.png', stock: 8, description: 'Microscope avancé pour analyses scientifiques.'},
     {name: 'Tablette Graphique', image: 'images/graphic-tablet.png', stock: 10, description: 'Tablette pour dessiner et créer avec précision.'},
-    {name: 'Projecteur HD', image: 'images/projector.jpg', stock: 6, description: 'Projecteur pour des présentations et divertissements.'},
-    {name: 'Caméra de Surveillance', image: 'images/camera.jpg', stock: 12, description: 'Caméra pour une sécurité renforcée.'},
+    {name: 'Projecteur HD', image: 'images/projector.png', stock: 6, description: 'Projecteur pour des présentations et divertissements.'},
+    {name: 'Caméra de Surveillance', image: 'images/camera.webp', stock: 12, description: 'Caméra pour une sécurité renforcée.'},
     {name: 'Robot Programmable', image: 'images/robot.jpg', stock: 4, description: 'Apprenez la programmation avec ce robot.'},
-    {name: 'Clavier Mécanique', image: 'images/keyboard.jpg', stock: 9, description: 'Clavier pour une frappe rapide et précise.'}
+    {name: 'Clavier Mécanique', image: 'images/keyboard.png', stock: 9, description: 'Clavier pour une frappe rapide et précise.'}
 ];
