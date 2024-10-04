@@ -264,13 +264,13 @@ $("#confirmerBtn").on("click", function () {
 
 
 const products = [
-    {name: 'Casque de réalité augmentée', image: 'images/613PQlT9mzL.jpg', stock: 13, description: 'Découvrez une nouvelle dimension de divertissement avec le dernier casque VR.'},
-    {name: 'Ordinateur Portable', image: 'images/laptop.png', stock: 7, description: 'Ordinateur performant pour toutes vos tâches.'},
-    {name: 'Imprimante 3D', image: 'images/printer3d.png', stock: 5, description: 'Imprimez vos créations avec cette imprimante 3D.'},
-    {name: 'Microscope', image: 'images/microscope.png', stock: 8, description: 'Microscope avancé pour analyses scientifiques.'},
+    {name: 'Casque de réalité augmentée', image: 'Images/613PQlT9mzL.jpg', stock: 13, description: 'Découvrez une nouvelle dimension de divertissement avec le dernier casque VR.'},
+    {name: 'Ordinateur Portable', image: 'Images/laptop.png', stock: 7, description: 'Ordinateur performant pour toutes vos tâches.'},
+    {name: 'Imprimante 3D', image: 'Images/printer3d.png', stock: 5, description: 'Imprimez vos créations avec cette imprimante 3D.'},
+    {name: 'Microscope', image: 'Images/microscope.png', stock: 8, description: 'Microscope avancé pour analyses scientifiques.'},
     {name: 'Tablette Graphique', image: 'Images/graphic-tablet.png', stock: 10, description: 'Tablette pour dessiner et créer avec précision.'},
-    {name: 'Projecteur HD', image: 'images/projector.png', stock: 6, description: 'Projecteur pour des présentations et divertissements.'},
-    {name: 'Caméra de Surveillance', image: 'images/camera.webp', stock: 12, description: 'Caméra pour une sécurité renforcée.'},
-    {name: 'Robot Programmable', image: 'images/robot.jpg', stock: 4, description: 'Apprenez la programmation avec ce robot.'},
-    {name: 'Clavier Mécanique', image: 'images/keyboard.png', stock: 9, description: 'Clavier pour une frappe rapide et précise.'}
+    {name: 'Projecteur HD', image: 'Images/projector.png', stock: 6, description: 'Projecteur pour des présentations et divertissements.'},
+    {name: 'Caméra de Surveillance', image: 'Images/camera.webp', stock: 12, description: 'Caméra pour une sécurité renforcée.'},
+    {name: 'Robot Programmable', image: 'Images/robot.jpg', stock: 4, description: 'Apprenez la programmation avec ce robot.'},
+    {name: 'Clavier Mécanique', image: 'Images/keyboard.png', stock: 9, description: 'Clavier pour une frappe rapide et précise.'}
 ];
